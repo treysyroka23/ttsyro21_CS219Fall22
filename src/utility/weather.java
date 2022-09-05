@@ -8,6 +8,7 @@ public class weather {
                                    double v) { //velocity in mph
         return 35.74 + .6215 * t + (.4275*t - 35.75) *Math.pow(v, .16);
     }
+
     public static void main(String [] args) {
         Scanner kbd = new Scanner(System.in);
         // used for getting input from the keyboard
