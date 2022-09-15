@@ -17,17 +17,24 @@ public class Investment {
 
         System.out.print("Enter an initial deposit as a positive decimal: ");
 // if else statement says if what the user enters is a double we save it into the deposit variable
-        if (kbd.hasNextDouble()){
+        if (kbd.hasNextDouble()) {
             deposit = kbd.nextDouble();
 
         }
-
 // if not it prints this and quit the program
         else {
-            System.out.print("Error please enter a positive decimal");
+            System.err.print("Please enter a decimal");
+            // shuts down the  program after the condition is met
+            System.exit(0);
             return;
         }
-
+        // This allows me to check if numbers enter are negatives and invalid
+        if (deposit < 0) {
+            // prints an error code
+            System.err.print("Please type a positive decimal number");
+            // shuts down the  program after the condition is met
+            System.exit(0);
+        }
 
  // this section determines our rate variable and if it meets the criteria
         double rate;
@@ -38,12 +45,18 @@ public class Investment {
 
         }
         else {
-            System.out.print("Error please enter a decimal between 0 and 1: ");
+            System.err.print("Please type a positive decimal number");
+            // shuts down the  program after the condition is met
+            System.exit(0);
 
             return;
 
         }
-
+        if (rate < 0 || rate > 1) {
+            System.err.print("Please type a decimal number between 0 and 1");
+            // shuts down the  program after the condition is met
+            System.exit(0);
+        }
 
 // establishing a integer variable and if it meets the criteria from the user input
         int year;
@@ -55,20 +68,34 @@ public class Investment {
         }
 
         else {
-            System.out.print("Error, enter how many years as a positive integer: ");
+            System.err.print("Error, enter how many years as a positive integer: ");
+            System.exit(0);
             return;
         }
+        if (year < 0) {
+            System.err.print("Please type a positive integer");
+            // shuts down the  program after the condition is met
+            System.exit(0);
+        }
 // establishing our compound variable
+
         int compound;
         System.out.print("Enter how many times your interest is compounded per year: ");
 
         if (kbd.hasNextInt()) {
             compound = kbd.nextInt();
         }
-
+// produces system erros if the input entered doesn't match the requirements i want
         else{
-            System.out.print("Error enter the compound as a integer: ");
+            System.err.print("Please type a positive integer");
+            // shuts down the  program after the condition is met
+            System.exit(0);
             return;
+        }
+        if (compound < 0) {
+            System.err.print("Please type a positive integer");
+            // shuts down the  program after the condition is met
+            System.exit(0);
         }
         // printing out the final answer with all our variables we established in the main program
         System.out.print(investment(deposit, rate, year, compound));
