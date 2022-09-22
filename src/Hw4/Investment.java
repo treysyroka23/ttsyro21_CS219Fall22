@@ -10,9 +10,6 @@ public class Investment {
     }
 
 
-
-
-
     public static void main(String[] args) {
 
         // establish my scanner system
@@ -34,35 +31,41 @@ public class Investment {
         double rate = kbd.nextDouble();
 // rate while loop
         while (rate < 0 || rate > 1) {
-            System.out.println("You entered " + rate + " that's not between 0 and 1, try again");
+            System.out.println("You entered " + rate + " that's not between 0 and 1, try again: ");
             rate = kbd.nextDouble();
         }
 // ask user for years variable
         System.out.println("Enter an amount of years your investment is compounding as an integer: ");
 
-        int years = kbd.nextInt();
+
 
 // years input while loop
-        while (years < 0) {
-            System.out.println("You entered " + years + " please enter a positive number, try again: ");
-            years = kbd.nextInt();
+        while (!kbd.hasNextInt()) {
+            String years = kbd.next();
+            System.out.println("You entered " + years + " please enter a positive integer, try again: ");
 
         }
+        int years = kbd.nextInt();
+
         // asking for user input
         System.out.println("Please enter the amount of times your investment is compounded per year: ");
 
 
-        int compound = kbd.nextInt();
         // while loop for my compound variable
-        while (compound < 0) {
-            System.out.println("You entered " + compound + " Please enter a positive integer, try again");
-            compound = kbd.nextInt();
+        while (!kbd.hasNextInt()) {
+            String compound = kbd.next();
+
+            System.err.println("You entered " + compound + " Please enter a positive integer, try again: ");
+
         }
 
+        int compound = kbd.nextInt();
 
-        System.out.print("You're investment is worth " + Math.round(investment(deposit, rate, years, compound)));
 
+
+        System.out.print("You're investment is worth "+Math.round(investment(deposit, rate, years, compound)));
+}
 
     }
-}
+
 
