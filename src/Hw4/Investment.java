@@ -54,12 +54,11 @@ public class Investment {
         // while loop for my compound variable
         while (!kbd.hasNextInt()) {
             String compound = kbd.next();
-
-            System.err.println("You entered " + compound + " Please enter a positive integer, try again: ");
+            System.out.println("You entered " + compound + " Please enter a positive integer, try again: ");
 
         }
-
         int compound = kbd.nextInt();
+
 
 
 
