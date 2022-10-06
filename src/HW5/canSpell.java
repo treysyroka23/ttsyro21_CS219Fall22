@@ -10,7 +10,8 @@ public class canSpell {
             //if it isn't or appears more times in tiles than word it returns false
             if(word.indexOf(tiles.charAt(i)) == -1) {
                 return false;
-            } else {
+            }
+            else {
                 // saves the amount (i) letters within the tiles string to the index of word
                 int char_location = word.indexOf(tiles.charAt(i));
                 // redefine word to the lengths of the substrings of itself

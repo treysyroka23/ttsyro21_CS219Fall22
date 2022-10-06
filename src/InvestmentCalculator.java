@@ -1,4 +1,4 @@
-import utility.Investment;
+import Hw4.Investment;
 import java.util.Scanner;
 public class InvestmentCalculator {
 
