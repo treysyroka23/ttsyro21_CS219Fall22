@@ -30,14 +30,14 @@ public class SwallowStats {
 
         // read each line of the web file
         while (s.hasNextLine()) {
-            String line = s.nextLine(); // reads lines from the website
+            String read = s.nextLine(); // reads lines from the website
 
-            if ((line.indexOf("#") == -1 && line.length() != 0)) {
-                if (Double.parseDouble(line) < min)
-                    min = (Double.parseDouble(line));
-                else if (Double.parseDouble(line) > max)
-                    max = Double.parseDouble(line);
-                sum += Double.parseDouble(line);
+            if ((read.indexOf("#") == -1 && read.length() != 0)) {
+                if (Double.parseDouble(read) < min)
+                    min = (Double.parseDouble(read));
+                else if (Double.parseDouble(read) > max)
+                    max = Double.parseDouble(read);
+                sum += Double.parseDouble(read);
                 count++;
             }
         }
