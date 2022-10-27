@@ -9,16 +9,9 @@ public class Hw7Java {
         See the tests in main.  The array should not be modified or reordered.
      */
     public static boolean hasAdjacent(String [] aos) {
-        for (int i = 0; i < aos.length; i++) {
-            for (int j = i  ; j < aos.length; j++) {
-
-                if (aos[i] == aos[j] + 1 ) {
-                    return true;
-                }
-
-            }
-
-            // just to shut up error message
+        for (int i = 0; i < aos.length - 1; i++) {
+            if (aos[i].equals(aos[i + 1]))
+                return true;
         }
         return false;
     }
@@ -32,7 +25,7 @@ public class Hw7Java {
     public static boolean hasDuplicate(String [] aos) {
         for (int i = 0; i < aos.length; i++) {
             for (int j = i + 1; j < aos.length; j ++) {
-                if (aos[i] == aos[j]) {
+                if (aos[i].equals((aos[j]))) {
                     return true;
                 }
             }
@@ -46,7 +39,7 @@ public class Hw7Java {
      */
     public static boolean goofy(int [] nums, int target) {
         for (int i = 0; i < nums.length; i ++) {
-            for (int j = i + 1; j < nums.length; j++) {
+            for (int j = i; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
                     return true;
                 }
