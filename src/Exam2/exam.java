@@ -58,9 +58,9 @@ public class exam {
 
         String empty="";
 
-        for(int i=0;i<words.length;i++){
+        for(int i = 0; i < words.length; i++){
 
-            for(int j=i+1;j<words.length;j++){
+            for(int j= i + 1 ; j < words.length; j++){
 
                 if(words[j].compareTo(words[i]) > 0){
 
