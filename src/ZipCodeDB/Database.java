@@ -9,12 +9,15 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Database {
+
     private ArrayList<Zipcode> codes;
+    private ArrayList<Zipcode> LatLngInterface;
 
     public Database() {
         // allocate the array list
         this.codes = new ArrayList<>();
         this.load_zips();
+        this.LatLngInterface = new ArrayList<>();
     }
 
     // fill the zipcode array list with real data
@@ -103,7 +106,13 @@ public class Database {
     }
 
     // return the zipcode info of the northern most latitude
-    public Zipcode max_latitude() {
+    public Zipcode getNorthern(String lng) {
+
+        for (Zipcode zipcode : this.LatLngInterface) {
+            if (lng.equals(zipcode.getWeatherData())) {
+                return zipcode;
+            }
+        }
         return null;
     }
 

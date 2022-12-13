@@ -11,12 +11,18 @@ public class GUIPanel extends JPanel{
     private JButton submit;
     private JTextArea output;
 
+    private JButton Northernmost;
+
     private Database db; // the zipcode database
 
     public GUIPanel() {
       this.zipcode = new JTextField("zipcode", 7);
       //
       this.add(this.zipcode);
+
+      this.Northernmost = new JButton("Northernmost");
+      this.add(Northernmost);
+      this.Northernmost.addActionListener(new SubmitButtonListener());
 
       this.submit = new JButton("submit");
       this.add(submit);
